@@ -1,13 +1,24 @@
+const headerProps: { [key: string]: any } = {
+  fontWeight: 'bold',
+  textTransform: 'uppercase',
+  letterSpacing: 1,
+}
+
 export default {
   overrides: {
     MuiButton: {
       root: {
         fontWeight: 'normal',
+        borderRadius: 12,
+        minWidth: 120,
       },
     },
     MuiPaper: {
       root: {
-        padding: 10,
+        padding: 16,
+      },
+      rounded: {
+        borderRadius: 12,
       },
     },
   },
@@ -36,6 +47,12 @@ export default {
     button: {
       textTransform: 'none',
     },
+    h1: headerProps,
+    h2: headerProps,
+    h3: headerProps,
+    h4: headerProps,
+    h5: headerProps,
+    h6: headerProps,
     fontFamily: 'Poppins, sans-serif',
     fontSize: 15,
     useNextVariants: true,
