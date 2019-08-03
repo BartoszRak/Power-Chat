@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
 
 import AuthorizedRoutes from '../pages/AuthorizedRoutes'
 import UnauthorizedRoutes from '../pages/UnauthorizedRoutes'
@@ -17,10 +16,6 @@ export function Layout() {
       <div className={classes.background} />
     </div>
   )
-}
-
-Layout.propTypes = {
-  classes: PropTypes.object,
 }
 
 export default Layout

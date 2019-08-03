@@ -1,6 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Paper, Typography, TextField, Button } from '@material-ui/core'
+import { Paper, Typography } from '@material-ui/core'
 
 import LoginForm from './components/LoginForm'
 import useStyle from './Login.style'
@@ -13,10 +12,6 @@ export function Login() {
       <LoginForm />
     </Paper>
   </div>
-}
-
-Login.propTypes = {
-  classes: PropTypes.object,
 }
 
 export default Login

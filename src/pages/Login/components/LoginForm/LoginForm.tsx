@@ -1,5 +1,4 @@
 import React, { useCallback, SyntheticEvent } from 'react'
-import PropTypes from 'prop-types'
 import { TextField, InputAdornment } from '@material-ui/core'
 import EmailIcon from '@material-ui/icons/Email'
 import PasswordIcon from '@material-ui/icons/VpnKey'
@@ -76,10 +75,6 @@ export function LoginForm() {
       </Button>
     </form>
   )
-}
-
-LoginForm.propTypes = {
-  classes: PropTypes.object,
 }
 
 export default LoginForm
