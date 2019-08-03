@@ -15,7 +15,7 @@ const mockedUser = {
 function App() {
   return <BrowserRouter>
     <AuthContext.Provider value={{
-      user: mockedUser
+      user: undefined
     }}>
       <Layout />
     </AuthContext.Provider>
