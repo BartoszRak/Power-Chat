@@ -2,8 +2,8 @@ import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import withMuiTheme from './theme/withMuiTheme'
 
-import Layout from '~layout'
-import AuthContext from '~contexts/AuthContext'
+import Layout from './layout'
+import AuthContext from './contexts/AuthContext'
 
 // MOCK
 const mockedUser = {

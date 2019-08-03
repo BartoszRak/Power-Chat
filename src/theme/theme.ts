@@ -5,6 +5,11 @@ export default {
         fontWeight: 'normal',
       },
     },
+    MuiPaper: {
+      root: {
+        padding: 10,
+      },
+    },
   },
   palette: {
     action: {
@@ -35,11 +40,4 @@ export default {
     fontSize: 15,
     useNextVariants: true,
   },
-  overrides: {
-    MuiPaper: {
-      root: {
-        padding: 10,
-      }
-    }
-  }
 }
