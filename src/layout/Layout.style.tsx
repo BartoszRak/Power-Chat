@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core'
-import backgroundUrl from '~assets/images/landscape-architecture-skyline-night-city-skyscraper.jpg'
+import backgroundUrl from '~assets/images/lightning-out-of-the-skies.jpg'
 
 export default makeStyles(() => ({
   root: {},
@@ -12,8 +12,8 @@ export default makeStyles(() => ({
     position: 'fixed',
     top: 0,
     left: 0,
-    width: '100%',
-    height: '100%',
+    width: '100vw',
+    height: '100vh',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
