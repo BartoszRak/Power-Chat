@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 const path = require('path')
 
-const dirAliases = ['assets', 'components', 'hooks', 'layout', 'pages', 'services', 'theme', 'utils', 'hocs']
+const dirAliases = ['assets', 'components', 'hooks', 'layout', 'pages', 'services', 'theme', 'utils', 'hocs', 'contexts']
 
 module.exports = {
   jest(config) {
