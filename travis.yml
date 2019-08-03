@@ -1,0 +1,35 @@
+language: node_js
+node_js:
+- "12"
+cache:
+  yarn: true
+  directories:
+  - node_modules
+branches:
+  only:
+  - master
+  - dev
+before_install:
+  - yarn global add firebase-tools
+install:
+  - yarn
+script:
+  - yarn test
+  - yarn build
+deploy:
+  - provider: firebase
+    skip_cleanup: true
+    token: $FIREBASE_API_KEY_DEV
+    project: dev
+    on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH = dev
+  - provider: firebase
+    skip_cleanup: true
+    token: $FIREBASE_API_KEY
+    project: master
+    on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH = master
+
+
