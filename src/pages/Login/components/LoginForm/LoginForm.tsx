@@ -22,7 +22,7 @@ export function LoginForm() {
   const submit = useCallback(
     (evt: SyntheticEvent) => {
       evt.preventDefault()
-
+      // TODO: Handle real submition here.
       console.log('Submit form with values:', values)
       reset()
     },

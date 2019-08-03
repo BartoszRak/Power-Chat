@@ -16,7 +16,7 @@ export interface UserFormValuesResult<TValues = any> {
 export default function useFormValues<TSchema = any>(
   initValues: TSchema
 ): UserFormValuesResult<TSchema> {
-  const state = useState(initValues)
+  const state: any[] = useState(initValues)
   const values: TSchema = state[0]
   const setValues: SetValues = state[1]
 
@@ -28,12 +28,12 @@ export default function useFormValues<TSchema = any>(
     setValues(newValues)
   }
 
-  const fieldOnChange = (evt: React.FormEvent): void => {
+  const fieldOnChange: FieldOnChange = (evt: React.FormEvent): void => {
     const target: HTMLInputElement = evt.target as HTMLInputElement
     setValue(target.id, target.value)
   }
 
-  const reset = (): void => {
+  const reset: Reset = (): void => {
     setValues(initValues)
   }
 
