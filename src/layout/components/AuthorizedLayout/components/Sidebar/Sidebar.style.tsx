@@ -15,8 +15,7 @@ export default makeStyles(({ palette, spacing, transitions }): {
     whiteSpace: 'nowrap',
   },
   subtitle: {
-    fontSize: '1rem',
-    textTransform: 'uppercase',
+    fontSize: '1.2rem',
     margin: spacing(2, 2, 0, 2),
   },
   paper: {

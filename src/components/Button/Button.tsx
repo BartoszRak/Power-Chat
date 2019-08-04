@@ -60,14 +60,14 @@ export function Button({
 
 Button.propTypes = {
   active: PropTypes.bool,
-  button: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  button: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   className: PropTypes.string,
   classes: PropTypes.object,
   color: PropTypes.string,
   onClick: PropTypes.func,
   href: PropTypes.string,
-  icon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  icon: PropTypes.oneOfType([PropTypes.func, PropTypes.node, PropTypes.object]),
   variant: PropTypes.string,
 }
 

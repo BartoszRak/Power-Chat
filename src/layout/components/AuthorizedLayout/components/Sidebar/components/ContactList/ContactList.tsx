@@ -27,9 +27,12 @@ export function ContactList({ contacts }: any): JSX.Element {
   return (
     <List>
       {contacts.map((contact: Contact, index: number) => (
-        <Link className={classes.link} to={`conversations/${contact.id}`}>
+        <Link
+          key={contact.nickname}
+          className={classes.link}
+          to={`conversations/${contact.id}`}
+        >
           <ListItem
-            key={contact.nickname}
             className={classNames({
               [classes.diffrent]: Boolean(index % 2 === 1),
             })}

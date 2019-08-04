@@ -1,5 +1,5 @@
 const headerProps: { [key: string]: any } = {
-  fontWeight: 'normal',
+  fontWeight: 500,
 }
 
 export default {
