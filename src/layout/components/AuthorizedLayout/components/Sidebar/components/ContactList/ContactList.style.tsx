@@ -20,6 +20,7 @@ export default makeStyles(({ palette }: Theme): any => ({
     fontSize: '1rem',
   },
   link: {
+    color: palette.primary.main,
     textDecoration: 'none',
   },
   root: {},
