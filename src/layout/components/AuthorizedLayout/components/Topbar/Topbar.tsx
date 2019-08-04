@@ -9,6 +9,8 @@ import Button from '../../../../../components/Button'
 import SidebarContext from '../../../../../contexts/SidebarContext'
 import useStyle from './Topbar.style'
 
+export const topbarHeight: number = 64
+
 export function Topbar(): JSX.Element {
   const classes: { [key: string]: any } = useStyle()
   const { open, set }: any = useContext(SidebarContext)

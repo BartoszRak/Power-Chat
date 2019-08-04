@@ -30,7 +30,7 @@ export function ContactList({ contacts }: any): JSX.Element {
         <Link
           key={contact.nickname}
           className={classes.link}
-          to={`conversations/${contact.id}`}
+          to={`contacts/${contact.id}`}
         >
           <ListItem
             className={classNames({

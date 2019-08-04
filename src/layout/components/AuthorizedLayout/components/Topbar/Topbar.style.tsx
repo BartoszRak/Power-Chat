@@ -1,6 +1,8 @@
 import { makeStyles } from '@material-ui/core'
 import { sidebarSize } from '../Sidebar/Sidebar'
 
+import { topbarHeight } from './Topbar'
+
 export default makeStyles(({ transitions, typography }): { [key: string]: any } => ({
   appBar: {
     height: 64,
@@ -13,6 +15,7 @@ export default makeStyles(({ transitions, typography }): { [key: string]: any } 
   },
   toolbar: {
     justifyContent: 'space-between',
+    height: topbarHeight,
   },
   sidebarShift: {
     width: `calc(100% - ${sidebarSize.open}px)`,

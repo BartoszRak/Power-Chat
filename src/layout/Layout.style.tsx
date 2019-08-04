@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core'
-import backgroundUrl from '~assets/images/lightning-out-of-the-skies.jpg'
+import backgroundUrl from '~assets/images/lightning-out-of-the-skies-blur.jpg'
 
 export default makeStyles(() => ({
   root: {},
