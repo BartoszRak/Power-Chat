@@ -28,7 +28,7 @@ export function RegisterForm(): JSX.Element {
       console.log('Submit form with values:', values)
       reset()
     },
-    [values]
+    [values, reset]
   )
   return (
     <form className={classes.root}>

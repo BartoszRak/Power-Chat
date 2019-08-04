@@ -9,7 +9,7 @@ export default {
     MuiButton: {
       root: {
         fontWeight: 'normal',
-        borderRadius: 12,
+        borderRadius: 100,
         minWidth: 120,
       },
     },
@@ -27,16 +27,19 @@ export default {
       chosen: 'rgba(255, 255, 255, 0.07)',
     },
     primary: {
+      contrastText: '#ffffff',
       dark: '#111111',
       light: '#222222',
       main: '#1f1f1f',
     },
     secondary: {
+      contrastText: '#000000',
       dark: '#eeeeee',
       light: '#ffffff',
       main: '#fafafa',
     },
     success: {
+      contrastText: '#ffffff',
       dark: '#1faa00',
       light: '#9cff57',
       main: '#64dd17',
