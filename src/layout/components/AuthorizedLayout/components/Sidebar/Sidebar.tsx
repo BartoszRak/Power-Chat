@@ -71,7 +71,7 @@ export function Sidebar({ open, onClose, onOpen }: any): JSX.Element {
           Contacts
         </Typography>
       )}
-      <ContactList contacts={mockedContacts} />
+      <ContactList add={(): any => console.log('[CONTACT LIST] Add new')} contacts={mockedContacts} />
     </SwipeableDrawer>
   )
 }
