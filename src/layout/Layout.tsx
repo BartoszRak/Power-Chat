@@ -4,14 +4,21 @@ import AuthorizedRoutes from '../pages/AuthorizedRoutes'
 import UnauthorizedRoutes from '../pages/UnauthorizedRoutes'
 import AuthContext from '../contexts/AuthContext'
 import useStyle from './Layout.style'
+import AuthorizedLayout from './components/AuthorizedLayout'
 
 export function Layout() {
-  const classes = useStyle()
+  const classes: { [key: string]: any } = useStyle()
   const { user }: any = useContext(AuthContext)
   return (
     <div className={classes.root}>
       <div className={classes.content}>
-        {user ? <AuthorizedRoutes /> : <UnauthorizedRoutes />}
+        {user ? (
+          <AuthorizedLayout>
+            <AuthorizedRoutes />
+          </AuthorizedLayout>
+        ) : (
+          <UnauthorizedRoutes />
+        )}
       </div>
       <div className={classes.background} />
     </div>
