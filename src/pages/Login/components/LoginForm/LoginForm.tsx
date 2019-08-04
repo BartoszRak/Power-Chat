@@ -8,7 +8,7 @@ import useStyle from './LoginForm.style'
 import LoginFormSchema from './interfaces/LoginForm.schema'
 import useFormValues, { UserFormValuesResult } from '../../../../hooks/useFormValues'
 
-export function LoginForm() {
+export function LoginForm(): JSX.Element {
   const classes: { [key: string]: any } = useStyle()
   const {
     values,

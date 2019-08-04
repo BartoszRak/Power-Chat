@@ -12,7 +12,7 @@ const mockedUser = {
   lastName: 'Rak',
 }
 
-function App() {
+function App(): JSX.Element {
   return <BrowserRouter>
     <AuthContext.Provider value={{
       user: mockedUser,

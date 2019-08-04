@@ -17,7 +17,7 @@ export function Button({
   variant,
   color,
   onClick,
-}: any) {
+}: any): JSX.Element {
   const classes: { [key: string]: any } = { ...useStyles(), ...overridingClasses }
   const linkButtonProps: { [key: string]: any } = href
     ? {

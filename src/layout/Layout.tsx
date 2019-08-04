@@ -6,7 +6,7 @@ import AuthContext from '../contexts/AuthContext'
 import useStyle from './Layout.style'
 import AuthorizedLayout from './components/AuthorizedLayout'
 
-export function Layout() {
+export function Layout(): JSX.Element {
   const classes: { [key: string]: any } = useStyle()
   const { user }: any = useContext(AuthContext)
   return (

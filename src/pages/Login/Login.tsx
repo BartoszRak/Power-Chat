@@ -4,7 +4,7 @@ import { Paper, Typography } from '@material-ui/core'
 import LoginForm from './components/LoginForm'
 import useStyle from './Login.style'
 
-export function Login() {
+export function Login(): JSX.Element {
   const classes = useStyle()
   return <div className={classes.root}>
     <Paper>

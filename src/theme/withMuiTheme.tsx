@@ -9,7 +9,7 @@ const withMuiTheme = (Component: any, withBaseline: any, additionalTheme?: any) 
   if (process.env.NODE_ENV !== 'production') {
     console.info('[THEME]', muiTheme)
   }
-  const HOC = (componentProps: any) => (
+  const HOC = (componentProps: any): JSX.Element => (
     <MuiThemeProvider theme={muiTheme}>
       {withBaseline && <CssBaseline />}
       <Component {...componentProps} />
