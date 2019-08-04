@@ -1,7 +1,5 @@
 const headerProps: { [key: string]: any } = {
-  fontWeight: 'bold',
-  textTransform: 'uppercase',
-  letterSpacing: 1,
+  fontWeight: 'normal',
 }
 
 export default {
