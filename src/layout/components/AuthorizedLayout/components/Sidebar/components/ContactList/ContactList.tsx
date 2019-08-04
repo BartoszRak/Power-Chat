@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import {
   List,
   ListItem,
@@ -16,40 +17,51 @@ import AddContactIcon from '@material-ui/icons/PersonAdd'
 import useStyle from './ContactList.style'
 
 interface Contact {
-  url: string
+  thumbnailUrl: string
   nickname: string
+  id: string
 }
 
-export function ContactList({ contacts, add }: any): JSX.Element {
+export function ContactList({ contacts }: any): JSX.Element {
   const classes: { [key: string]: any } = useStyle()
   return (
     <List>
       {contacts.map((contact: Contact, index: number) => (
-        <ListItem
-          key={contact.nickname}
-          className={classNames({
-            [classes.diffrent]: Boolean(index % 2 === 1),
-          })}
-          button
-          onClick={(): any => console.log(`[CONTACT CLICK] ${contacts.nickname}`)}
-        >
-          <ListItemAvatar>
-            <Avatar
-              className={classes.avatar}
-              alt={contact.nickname}
-              src={contact.url}
-            />
-          </ListItemAvatar>
-          <ListItemText>{contact.nickname}</ListItemText>
-        </ListItem>
+        <Link className={classes.link} to={`conversations/${contact.id}`}>
+          <ListItem
+            key={contact.nickname}
+            className={classNames({
+              [classes.diffrent]: Boolean(index % 2 === 1),
+            })}
+            button
+          >
+            <ListItemAvatar>
+              <Avatar
+                className={classes.avatar}
+                alt={contact.nickname}
+                src={contact.thumbnailUrl}
+              />
+            </ListItemAvatar>
+            <ListItemText>
+              <Typography
+                className={classes.contactNickname}
+                variant="h3"
+                color="textPrimary"
+              >
+                {contact.nickname}
+              </Typography>
+            </ListItemText>
+          </ListItem>
+        </Link>
       ))}
-      {add && (
+      <Link className={classes.link} to="contacts/add">
         <ListItem
           className={classNames({
             [classes.diffrent]: Boolean(contacts.length % 2 === 1),
           })}
           button
-          onClick={add}
+          role="button"
+          aria-label="Add new contact"
         >
           <ListItemIcon>
             <Box className={classes.addNewIconHolder}>
@@ -57,16 +69,17 @@ export function ContactList({ contacts, add }: any): JSX.Element {
             </Box>
           </ListItemIcon>
           <ListItemText>
-            <Typography className={classes.addNewText}>Add new</Typography>
+            <Typography className={classes.addNewText} variant="h2">
+              Add new contact
+            </Typography>
           </ListItemText>
         </ListItem>
-      )}
+      </Link>
     </List>
   )
 }
 
 ContactList.propTypes = {
-  add: PropTypes.func,
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       url: PropTypes.string,

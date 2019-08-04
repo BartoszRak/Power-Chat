@@ -11,22 +11,27 @@ import useStyle from './Sidebar.style'
 
 const mockedContacts: any[] = [
   {
+    id: '4215',
     nickname: 'Dragon5123',
-    url:
+    thumbnailUrl:
       'https://boygeniusreport.files.wordpress.com/2017/01/cat.jpg?quality=98&strip=all&w=782',
   },
   {
+    id: '5345',
     nickname: 'MsAnna',
-    url:
+    thumbnailUrl:
       'https://cdn.theatlantic.com/assets/media/img/mt/2017/10/Pict1_Ursinia_calendulifolia/lead_720_405.jpg?mod=1533691909',
   },
   {
+    id: '9786',
     nickname: 'DarkWarrior',
-    url: 'https://www.wprost.pl/_thumb/c9/19/8db359c789723076e9084efb316d.jpeg',
+    thumbnailUrl:
+      'https://www.wprost.pl/_thumb/c9/19/8db359c789723076e9084efb316d.jpeg',
   },
   {
+    id: '8645',
     nickname: 'PlanetEarth',
-    url:
+    thumbnailUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7nkW7q-9yAl5gB75i-wTbo33ABNbVM8YD4yu8t4LGo9wXgZrjpg',
   },
 ]
@@ -71,7 +76,7 @@ export function Sidebar({ open, onClose, onOpen }: any): JSX.Element {
           Contacts
         </Typography>
       )}
-      <ContactList add={(): any => console.log('[CONTACT LIST] Add new')} contacts={mockedContacts} />
+      <ContactList contacts={mockedContacts} />
     </SwipeableDrawer>
   )
 }
