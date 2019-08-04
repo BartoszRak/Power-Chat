@@ -25,7 +25,7 @@ export function ContactList({ contacts }: any): JSX.Element {
           [classes.diffrent]: Boolean(index % 2 === 1)
         })} button onClick={(): any => console.log(`[CONTACT CLICK] ${contacts.nickname}`)}>
           <ListItemAvatar>
-            <Avatar alt={contact.nickname} src={contact.url} />
+            <Avatar className={classes.avatar} alt={contact.nickname} src={contact.url} />
           </ListItemAvatar>
           <ListItemText>
             {contact.nickname}

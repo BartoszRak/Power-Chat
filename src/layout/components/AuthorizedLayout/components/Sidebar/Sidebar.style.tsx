@@ -2,7 +2,12 @@ import { makeStyles } from '@material-ui/core'
 
 import { sidebarSize } from './Sidebar'
 
-export default makeStyles(({ spacing, transitions }): { [key: string]: any } => ({
+export default makeStyles(({ palette, spacing, transitions }): {
+  [key: string]: any
+} => ({
+  avatar: {
+    border: `2px solid ${palette.primary.main}`,
+  },
   root: {},
   drawer: {
     width: sidebarSize.open,
@@ -10,7 +15,8 @@ export default makeStyles(({ spacing, transitions }): { [key: string]: any } => 
     whiteSpace: 'nowrap',
   },
   subtitle: {
-    fontSize: '1.5rem',
+    fontSize: '1rem',
+    textTransform: 'uppercase',
     margin: spacing(2, 2, 0, 2),
   },
   paper: {

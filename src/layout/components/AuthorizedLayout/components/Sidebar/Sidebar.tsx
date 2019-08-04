@@ -1,32 +1,44 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classNames from 'classnames'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { SwipeableDrawer, Divider, Typography } from '@material-ui/core'
+import { SwipeableDrawer, Box, Divider, Typography, Avatar } from '@material-ui/core'
 
+import AuthContext from '../../../../../contexts/AuthContext'
 import ContactList from './components/ContactList'
+import UserInformation from './components/UserInformation'
 import useStyle from './Sidebar.style'
 
-const mockedContacts: any[] = [{
-  nickname: 'Dragon5123',
-  url: 'https://boygeniusreport.files.wordpress.com/2017/01/cat.jpg?quality=98&strip=all&w=782',
-}, {
-  nickname: 'MsAnna',
-  url: 'https://cdn.theatlantic.com/assets/media/img/mt/2017/10/Pict1_Ursinia_calendulifolia/lead_720_405.jpg?mod=1533691909',
-}, {
-  nickname: 'DarkWarrior',
-  url: 'https://www.wprost.pl/_thumb/c9/19/8db359c789723076e9084efb316d.jpeg',
-}, {
-  nickname: 'PlanetEarth',
-  url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7nkW7q-9yAl5gB75i-wTbo33ABNbVM8YD4yu8t4LGo9wXgZrjpg',
-}]
+const mockedContacts: any[] = [
+  {
+    nickname: 'Dragon5123',
+    url:
+      'https://boygeniusreport.files.wordpress.com/2017/01/cat.jpg?quality=98&strip=all&w=782',
+  },
+  {
+    nickname: 'MsAnna',
+    url:
+      'https://cdn.theatlantic.com/assets/media/img/mt/2017/10/Pict1_Ursinia_calendulifolia/lead_720_405.jpg?mod=1533691909',
+  },
+  {
+    nickname: 'DarkWarrior',
+    url: 'https://www.wprost.pl/_thumb/c9/19/8db359c789723076e9084efb316d.jpeg',
+  },
+  {
+    nickname: 'PlanetEarth',
+    url:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7nkW7q-9yAl5gB75i-wTbo33ABNbVM8YD4yu8t4LGo9wXgZrjpg',
+  },
+]
 
-export const sidebarSize: { open: number, closed: number } = {
+export const sidebarSize: { open: number; closed: number } = {
   open: 300,
-  closed: 70,
+  closed: 72,
 }
 
 export function Sidebar({ open, onClose, onOpen }: any): JSX.Element {
   const classes: { [key: string]: any } = useStyle()
+  const { user }: any = useContext(AuthContext)
   return (
     <SwipeableDrawer
       variant="permanent"
@@ -44,9 +56,21 @@ export function Sidebar({ open, onClose, onOpen }: any): JSX.Element {
         }),
       }}
     >
-      User avatar
+      {open ? (
+        <UserInformation />
+      ) : (
+        <Box p={2}>
+          <Link to={`users/${user.id}`}>
+            <Avatar className={classes.avatar} src={user.thumbnailUrl} />
+          </Link>
+        </Box>
+      )}
       <Divider />
-      <Typography className={classes.subtitle} variant="h2">Contacts</Typography>
+      {open && (
+        <Typography className={classes.subtitle} variant="h2">
+          Contacts
+        </Typography>
+      )}
       <ContactList contacts={mockedContacts} />
     </SwipeableDrawer>
   )
