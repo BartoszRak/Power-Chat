@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { AppBar, Toolbar, IconButton } from '@material-ui/core'
 import ArrowBack from '@material-ui/icons/ArrowBackIos'
 import ArrowForward from '@material-ui/icons/ArrowForwardIos'
+import LogoutIcon from '@material-ui/icons/PowerSettingsNew'
 
 import Button from '../../../../../components/Button'
 import SidebarContext from '../../../../../contexts/SidebarContext'
@@ -29,7 +30,7 @@ export function Topbar(): JSX.Element {
         <Button
           onClick={(): any => console.log('[LOGOUT]')}
           color="primary"
-          variant="contained"
+          icon={LogoutIcon}
         >
           Logout
         </Button>
