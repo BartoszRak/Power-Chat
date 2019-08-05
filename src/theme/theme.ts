@@ -2,6 +2,31 @@ const headerProps: { [key: string]: any } = {
   fontWeight: 500,
 }
 
+const palette: { [key: string]: any } = {
+  action: {
+    chosen: 'rgba(255, 255, 255, 0.07)',
+  },
+  primary: {
+    contrastText: '#ffffff',
+    dark: '#111111',
+    light: '#222222',
+    main: '#1f1f1f',
+  },
+  secondary: {
+    contrastText: '#000000',
+    dark: '#eeeeee',
+    light: '#ffffff',
+    main: '#fafafa',
+  },
+  success: {
+    contrastText: '#ffffff',
+    dark: '#1faa00',
+    light: '#9cff57',
+    main: '#64dd17',
+  },
+  type: 'light',
+}
+
 export default {
   overrides: {
     MuiButton: {
@@ -19,31 +44,31 @@ export default {
         borderRadius: 12,
       },
     },
+    MuiFilledInput: {
+      multiline: {
+        padding: '12px 18px 12px 18px',
+      },
+      root: {
+        borderRadius: `24px !important`,
+        padding: '12px 18px 12px 18px',
+        backgroundColor: palette.secondary.main,
+        fontSize: '0.9rem',
+        border: `1px solid ${palette.secondary.dark}`,
+      },
+      underline: {
+        '&:before': {
+          borderBottom: 'none',
+        },
+        '&:after': {
+          borderBottom: 'none',
+        },
+        '&:hover:before, &:focus-within:before': {
+          borderBottom: 'none',
+        },
+      },
+    },
   },
-  palette: {
-    action: {
-      chosen: 'rgba(255, 255, 255, 0.07)',
-    },
-    primary: {
-      contrastText: '#ffffff',
-      dark: '#111111',
-      light: '#222222',
-      main: '#1f1f1f',
-    },
-    secondary: {
-      contrastText: '#000000',
-      dark: '#eeeeee',
-      light: '#ffffff',
-      main: '#fafafa',
-    },
-    success: {
-      contrastText: '#ffffff',
-      dark: '#1faa00',
-      light: '#9cff57',
-      main: '#64dd17',
-    },
-    type: 'light',
-  },
+  palette,
   typography: {
     button: {
       textTransform: 'none',
