@@ -46,9 +46,9 @@ export function RegisterForm(): JSX.Element {
         }}
         type="text"
         id="nickname"
-        label="Nickname"
         onChange={fieldOnChange}
         value={values.nickname}
+        variant="filled"
       />
       <Box component="div" className={classes.box}>
         <TextField
@@ -65,9 +65,9 @@ export function RegisterForm(): JSX.Element {
           }}
           type="email"
           id="email"
-          label="Email"
           onChange={fieldOnChange}
           value={values.email}
+          variant="filled"
         />
         <TextField
           className={classes.field}
@@ -83,9 +83,9 @@ export function RegisterForm(): JSX.Element {
           }}
           type="email"
           id="repeatEmail"
-          label="Repeat email"
           onChange={fieldOnChange}
           value={values.repeatEmail}
+          variant="filled"
         />
       </Box>
       <Box component="div" className={classes.box}>
@@ -103,9 +103,9 @@ export function RegisterForm(): JSX.Element {
           }}
           type="password"
           id="password"
-          label="Password"
           onChange={fieldOnChange}
           value={values.password}
+          variant="filled"
         />
         <TextField
           className={classes.field}
@@ -121,9 +121,9 @@ export function RegisterForm(): JSX.Element {
           }}
           type="password"
           id="repeatPassword"
-          label="Repeat password"
           onChange={fieldOnChange}
           value={values.repeatPassword}
+          variant="filled"
         />
       </Box>
       <Button

@@ -44,6 +44,11 @@ export default {
         borderRadius: 12,
       },
     },
+    MuiInputAdornment: {
+      positionStart: {
+        marginTop: '0 !important',
+      },
+    },
     MuiFilledInput: {
       multiline: {
         padding: '12px 18px 12px 18px',
@@ -54,6 +59,9 @@ export default {
         backgroundColor: palette.secondary.main,
         fontSize: '0.9rem',
         border: `1px solid ${palette.secondary.dark}`,
+      },
+      input: {
+        padding: 0,
       },
       underline: {
         '&:before': {
