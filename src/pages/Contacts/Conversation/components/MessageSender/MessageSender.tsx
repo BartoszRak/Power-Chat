@@ -25,7 +25,6 @@ export function MessageSender(): JSX.Element {
         value={message}
         fullWidth
         placeholder="Don't be so shy! Type something..."
-        multiline
         type="text"
         variant="filled"
         InputProps={{

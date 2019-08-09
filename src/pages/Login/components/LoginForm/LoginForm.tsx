@@ -44,9 +44,9 @@ export function LoginForm(): JSX.Element {
         }}
         type="email"
         id="email"
-        label="Email"
         onChange={fieldOnChange}
         value={values.email}
+        variant="filled"
       />
       <TextField
         className={classes.field}
@@ -62,8 +62,9 @@ export function LoginForm(): JSX.Element {
         }}
         type="password"
         id="password"
-        label="Password"
+        variant="filled"
         onChange={fieldOnChange}
+        multiline
       />
       <Button
         className={classes.submit}
