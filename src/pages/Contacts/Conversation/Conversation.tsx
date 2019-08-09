@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Paper, Box, Divider, Avatar, Typography } from '@material-ui/core'
+import { Paper, Box, Avatar, Typography } from '@material-ui/core'
 
 import MessageSender from './components/MessageSender'
 import Messages from './components/Messages'
