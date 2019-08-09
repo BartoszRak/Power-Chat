@@ -4,10 +4,8 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Conversation from './Conversation'
 import ContactManager from './ContactManager'
-import useStyle from './Contacts.style'
 
 export function Contacts({ match }: any): JSX.Element {
-  const classes: { [key: string]: any } = useStyle()
   return (
     <Switch>
       <Route path={`${match.path}`} exact component={ContactManager} />

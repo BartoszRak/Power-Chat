@@ -18,14 +18,14 @@ export function LoginForm(): JSX.Element {
     new LoginFormSchema()
   )
 
-  const submit = useCallback(
+  const submit: any = useCallback(
     (evt: SyntheticEvent) => {
       evt.preventDefault()
       // TODO: Handle real submition here.
       console.log('Submit form with values:', values)
       reset()
     },
-    [values]
+    [values, reset]
   )
 
   return (
@@ -33,6 +33,9 @@ export function LoginForm(): JSX.Element {
       <TextField
         className={classes.field}
         InputProps={{
+          inputProps: {
+            placeholder: 'Account email',
+          },
           startAdornment: (
             <InputAdornment position="start">
               <EmailIcon className={classes.adornmentIcon} />
@@ -42,15 +45,15 @@ export function LoginForm(): JSX.Element {
         type="email"
         id="email"
         label="Email"
-        inputProps={{
-          placeholder: 'Account email',
-        }}
         onChange={fieldOnChange}
         value={values.email}
       />
       <TextField
         className={classes.field}
         InputProps={{
+          inputProps: {
+            placeholder: 'Password',
+          },
           startAdornment: (
             <InputAdornment position="start">
               <PasswordIcon className={classes.adornmentIcon} />
@@ -60,9 +63,6 @@ export function LoginForm(): JSX.Element {
         type="password"
         id="password"
         label="Password"
-        inputProps={{
-          placeholder: 'Password',
-        }}
         onChange={fieldOnChange}
       />
       <Button

@@ -35,6 +35,9 @@ export function RegisterForm(): JSX.Element {
       <TextField
         className={classNames(classes.field, classes.nickname)}
         InputProps={{
+          inputProps: {
+            placeholder: 'Your username',
+          },
           startAdornment: (
             <InputAdornment position="start">
               <NicknameIcon className={classes.adornmentIcon} />
@@ -44,9 +47,6 @@ export function RegisterForm(): JSX.Element {
         type="text"
         id="nickname"
         label="Nickname"
-        inputProps={{
-          placeholder: 'Your username',
-        }}
         onChange={fieldOnChange}
         value={values.nickname}
       />
@@ -54,6 +54,9 @@ export function RegisterForm(): JSX.Element {
         <TextField
           className={classes.field}
           InputProps={{
+            inputProps:{
+              placeholder: 'Account email',
+            },
             startAdornment: (
               <InputAdornment position="start">
                 <EmailIcon className={classes.adornmentIcon} />
@@ -63,15 +66,15 @@ export function RegisterForm(): JSX.Element {
           type="email"
           id="email"
           label="Email"
-          inputProps={{
-            placeholder: 'Account email',
-          }}
           onChange={fieldOnChange}
           value={values.email}
         />
         <TextField
           className={classes.field}
           InputProps={{
+            inputProps: {
+              placeholder: 'Repeated account email',
+            },
             startAdornment: (
               <InputAdornment position="start">
                 <RepeatEmailIcon className={classes.adornmentIcon} />
@@ -81,9 +84,6 @@ export function RegisterForm(): JSX.Element {
           type="email"
           id="repeatEmail"
           label="Repeat email"
-          inputProps={{
-            placeholder: 'Repeated account email',
-          }}
           onChange={fieldOnChange}
           value={values.repeatEmail}
         />
@@ -92,6 +92,9 @@ export function RegisterForm(): JSX.Element {
         <TextField
           className={classes.field}
           InputProps={{
+            inputProps: {
+              placeholder: 'Password',
+            },
             startAdornment: (
               <InputAdornment position="start">
                 <PasswordIcon className={classes.adornmentIcon} />
@@ -101,15 +104,15 @@ export function RegisterForm(): JSX.Element {
           type="password"
           id="password"
           label="Password"
-          inputProps={{
-            placeholder: 'Password',
-          }}
           onChange={fieldOnChange}
           value={values.password}
         />
         <TextField
           className={classes.field}
           InputProps={{
+            inputProps: {
+              placeholder: 'Repeated password',
+            },
             startAdornment: (
               <InputAdornment position="start">
                 <PasswordIcon className={classes.adornmentIcon} />
@@ -119,9 +122,6 @@ export function RegisterForm(): JSX.Element {
           type="password"
           id="repeatPassword"
           label="Repeat password"
-          inputProps={{
-            placeholder: 'Repeated password',
-          }}
           onChange={fieldOnChange}
           value={values.repeatPassword}
         />
